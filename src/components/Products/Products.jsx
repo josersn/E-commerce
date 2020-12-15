@@ -3,14 +3,19 @@ import { Grid } from "@material-ui/core";
 
 import Product from "../Product/Product";
 
+import useStyle from "./style";
+
 const products = [
-    { id: 1, name: "Shoes", description: "Running Shos", price: 'R$ 20', image: 'https://images.vans.com/is/image/Vans/D3HY28-HERO' },
-    { id: 2, name: "Macbook", description: "Apple Macbook", price: 'R$ 2000', image: 'https://images-shoptime.b2w.io/produtos/01/00/offers/01/00/item/132490/7/132490742_1GG.png' }
+    { id: 1, name: "EVERBREW DOUBLE", description: "Cerveja Artesanal Everbrew Double Think Hop 473ml", price: 'R$ 35,99', image: 'https://cervejabox.vteximg.com.br/arquivos/ids/188846-1000-1000/think-hop-min.jpg?v=637411373716400000' },
+    { id: 2, name: "KUD BLACKBIRD BLACK", description: "A emblemática música 'Blackbird' de Paul McCartney é a grande inspiração da cerveja Küd BlackBird Black IPA", price: 'R$ 2000', image: 'https://cervejabox.vteximg.com.br/arquivos/ids/188013-1000-1000/Kud-blackbird-min.jpg?v=637369994648430000' }
 ];
 
 const Products = () => {
+
+    const classes = useStyle();
     return (
-        <main>
+        <main className={classes.content}>
+            <div className={classes.toolbar} />
             <Grid container justify="center" spacing={4}>
                 {products.map(product => (
                     <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
